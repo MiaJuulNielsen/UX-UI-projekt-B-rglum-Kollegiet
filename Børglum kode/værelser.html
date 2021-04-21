@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Børglum kollegiet ligger centralt i forhold til Aarhus og uddannelsesinstitutionerne. På Kollegiet er der mange fælles faciliteter."
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" href="img/logo.png" />
+    <title>Børglum Kollegiet</title>
+  </head>
+
+  <body>
+    <!--navbar-->
+    <nav>
+      <a href="index.html" id="logo">
+        <img class="logo-img" src="img/logo.png" alt="Børglum Kollegiet logo" />
+      </a>
+
+      <ul class="nav_links">
+        <li>
+          <a href="info.html">Information</a>
+        </li>
+        <li>
+          <a href="værelser.html">Værelser</a>
+        </li>
+        <li>
+          <a href="login.html">Log-in</a>
+        </li>
+      </ul>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+    <script src="script.js"></script>
+
+    <main>
+      <!--image slider start-->
+      <div class="slider">
+        <div class="slides">
+          <!--radio buttons start-->
+          <input type="radio" name="radio-btn" id="radio1" />
+          <input type="radio" name="radio-btn" id="radio2" />
+          <input type="radio" name="radio-btn" id="radio3" />
+          <input type="radio" name="radio-btn" id="radio4" />
+          <!--radio buttons end-->
+          <!--slide images start-->
+          <div class="slide first">
+            <img src="img/Plantegningb.png" alt="Plantegning" />
+          </div>
+          <div class="slide">
+            <img src="img/Værelse.png" alt="Billeder af værelserne" />
+          </div>
+          <div class="slide">
+            <img src="img/plantegning.png" alt="Plantegning over værelse" />
+          </div>
+          <div class="slide">
+            <img src="img/BygningV.png" alt="Billeder af bygningen" />
+          </div>
+          <!--slide images end-->
+          <!--automatic navigation start-->
+          <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
+          <!--automatic navigation end-->
+        </div>
+        <!--manual navigation start-->
+        <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+        </div>
+        <!--manual navigation end-->
+      </div>
+      <!--image slider end-->
+
+      <script type="javascript">
+        var counter = 1;
+        setInterval(function () {
+          document.getElementById("radio" + counter).checked = true;
+          counter++;
+          if (counter > 4) {
+            counter = 1;
+          }
+        }, 5000);
+      </script>
+
+      <h1 class="værelser-h1">Sådan lejer du et værelse</h1>
+      <div class="video-container">
+        <video
+          autoplay
+          loop
+          class="motiongraphic1"
+          src="img/MotionG1_1.mp4"
+          alt="Sådan lejer du et værelse"
+        ></video>
+        <video
+          autoplay
+          loop
+          class="motiongraphic2"
+          src="img/MotionG2_2.mp4"
+          alt="Sådan lejer du et værelse"
+        ></video>
+        <video
+          autoplay
+          loop
+          class="motiongraphic3"
+          src="img/MotionG3_3.mp4"
+          alt="Sådan lejer du et værelse"
+        ></video>
+      </div>
+    </main>
+
+    <footer class="page_footer">
+      <section class="page_footer_section">
+        <h4>Find os her</h4>
+        <link
+          href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css"
+          rel="stylesheet"
+        />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+
+        <div id="map"></div>
+        <script>
+          mapboxgl.accessToken =
+            "pk.eyJ1IjoibWlhanV1bG5pZWxzZW4iLCJhIjoiY2tuZzA2YXd2MDJpejJvb2Jocjl4b3NyaCJ9.uOJRIpTNzax7ARMUo9mrcw";
+          var map = new mapboxgl.Map({
+            container: "map", // container id
+            style: "mapbox://styles/miajuulnielsen/cknhetd7t3gxd17o4j1yjz6et", // style URL
+            center: [10.213432, 56.18803], // starting position [lng, lat]
+            zoom: 15.79, // starting zoom
+          });
+        </script>
+      </section>
+
+      <section class="page_footer_section">
+        <h4 class="some-h4">Kontakt</h4>
+        <p>
+          Telefon: +45 86 21 55 52 <br />
+          E-mail: kontoret@boerglumkollegiet.dk
+        </p>
+        <a href="https://www.facebook.com/BoerglumTenantCommittee"
+          ><img src="img/fb.png" alt="facebook icon" class="some-image"
+        /></a>
+      </section>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,713 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  background-color: #efebe8;
+  overflow: scroll;
+}
+
+/*-- navbar --*/
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  min-height: 10vh;
+  align-items: center;
+  background-color: #b0968e;
+  z-index: 9999;
+}
+
+.logo-img {
+  height: 75px;
+  width: 80px;
+  margin-top: 0%;
+}
+
+.nav_links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav_links li {
+  list-style: none;
+}
+
+.nav_links a {
+  padding: 0px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-active {
+  transform: translateX(0%);
+  transition: transform 0.5s ease-in;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*-- Forside og værelser --*/
+
+.holdingcontainer,
+.holdingcontainer2 {
+  max-width: 100%;
+  display: flex;
+  background: #efebe8;
+  padding: 50px;
+  box-sizing: border-box;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.internalcontainerL {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  font-size: 17px;
+  margin: 3px;
+}
+
+.internalcontainerM {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  font-size: 17px;
+  margin: 3px;
+}
+
+.internalcontainerR {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  font-size: 17px;
+  margin: 3px;
+}
+
+.internalcontainerRI {
+  flex: 1;
+  background: #efebe8;
+  padding: 30px;
+  font-size: 17px;
+  margin: 3px;
+}
+.internalcontainerLI {
+  flex: 1;
+  background: #efebe8;
+  padding: 30px;
+  font-size: 17px;
+  margin: 3px;
+}
+
+.underoverskrift-h2,
+a {
+  text-align: center;
+  padding: 10px;
+  color: black;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.kalenderimg {
+  height: 60%;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nyhederimg {
+  height: 60%;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.snapwidget-widget {
+  border: none;
+  overflow: hidden;
+  width: 60%;
+  height: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h1-ombørglum {
+  text-align: center;
+  margin: 1.5%;
+}
+
+.p-ombørglum {
+  text-align: center;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+
+.værelser-h1 {
+  text-align: center;
+  margin: 1.5%;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2%;
+}
+
+.motiongraphic1,
+.motiongraphic2,
+.motiongraphic3 {
+  margin: 2%;
+  height: 33.32%;
+  width: 33.32%;
+}
+
+/* image slider */
+
+.slider {
+  width: 100vw;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100vw;
+  height: 500px;
+  object-fit: cover;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual {
+  position: absolute;
+  width: 100vw;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid #efebe8;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: #efebe8;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div {
+  border: 2px solid #efebe8;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: #efebe8;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: #efebe8;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: #efebe8;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: #efebe8;
+}
+
+/*--- Information ---*/
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 40px 40px;
+  grid-template-areas:
+    "box1-2 box1-2 box2-2 box2-2"
+    "box3-2 box3-2 box4-2 box4-2";
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  display: block;
+}
+
+.image-container > img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+
+.text {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-size: 30px;
+}
+
+.text-p {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-size: 17px;
+}
+
+.image-container:hover .text {
+  opacity: 1;
+}
+.image-container:hover .text-p {
+  opacity: 1;
+}
+
+.text,
+.text-p > * {
+  transform: translateY(1px);
+  transition: transform 0.5s;
+}
+
+.text,
+.text-p:hover > * {
+  transform: translateY(1px);
+}
+
+.text,
+.text-p {
+  font-weight: bold;
+  color: white;
+}
+
+.box1-2 {
+  grid-area: box1-2;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+.box2-2 {
+  grid-area: box2-2;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+.box3-2 {
+  grid-area: box3-2;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+.box4-2 {
+  grid-area: box4-2;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+
+.info-h1 {
+  text-align: center;
+  margin: 1.5%;
+}
+
+.info-h3,
+.info-p {
+  text-align: center;
+  margin: 1.5%;
+}
+
+.infographic-billeder {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.husregler,
+.godstil,
+.dårligstil {
+  height: 33.32%;
+  width: 33.32%;
+}
+
+/*--- login ---*/
+
+.h1-login {
+  text-align: center;
+  margin-top: 4%;
+}
+
+.main-login {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #efebe8;
+}
+
+.form {
+  z-index: 1;
+  position: absolute;
+  width: 320px;
+  text-align: center;
+}
+
+.form i {
+  z-index: 1;
+  color: white;
+  font-size: 65px;
+  margin-bottom: 30px;
+}
+
+.form .signup-form {
+  display: none;
+}
+
+.form .user-input {
+  width: 320px;
+  height: 55px;
+  margin-bottom: 30px;
+  outline: none;
+  border: none;
+  background: white;
+  color: black;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.5s;
+  transition-property: border-left, border-right, box-shadow;
+}
+
+.form .user-input:hover,
+.form .user-input:focus,
+.form .user-input:active {
+  border-left: solid 8px #b0968e;
+  border-right: solid 8px #b0968e;
+  box-shadow: 0 0 100px #b0968e;
+}
+
+.form .options-01 {
+  margin-bottom: 50px;
+}
+
+.form .options-01 input {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.form .options-01 .remember-me {
+  color: #bbb;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  float: left;
+  cursor: pointer;
+}
+
+.form .options-01 a {
+  color: #b0968e;
+  font-size: 14px;
+  font-style: italic;
+  float: right;
+}
+
+.form .btn {
+  outline: none;
+  border: none;
+  width: 320px;
+  height: 55px;
+  background: #b0968e;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  transition-property: border-left, border-right, box-shadow;
+}
+
+.form .btn:hover {
+  border-left: solid 8px #b0968e;
+  border-right: solid 8px #b0968e;
+  box-shadow: 0 0 100px #b0968e;
+}
+
+.form .options-02 {
+  color: #b0968e;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.form .options-02 a {
+  color: #b0968e;
+}
+
+/*-- Footer section --*/
+.some-image {
+  width: 50px;
+  margin-right: 16px;
+  margin-top: 16px;
+}
+
+.page_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 15.625rem;
+  background-color: #b0968e;
+  color: white;
+}
+
+.footer-h4 {
+  margin-bottom: 1rem;
+}
+
+#map {
+  width: 20%;
+  height: 15%;
+  position: absolute;
+}
+
+.page_footer_section {
+  margin-top: 1%;
+}
+
+/*--- @media ---*/
+
+@media only screen and (min-width: 1024px) {
+  /*-- Nav --*/
+  .nav_links {
+    width: 60%;
+  }
+  /*-- Footer --*/
+  .page_footer {
+    flex-direction: row;
+    height: 12.5rem;
+  }
+
+  .page_footer_section {
+    height: 8.75rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /*-- Nav --*/
+  .nav_links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*-- Nav --*/
+  body {
+    overflow: hidden;
+  }
+  .nav_links {
+    position: fixed;
+    right: 0px;
+    height: 92vh;
+    top: 12vh;
+    background: #b0968e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    z-index: 1;
+  }
+  .nav_links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in;
+  }
+
+  /*-- Forside og værelser --*/
+  .holdingcontainer,
+  .holdingcontainer2 {
+    flex-direction: column;
+  }
+
+  .holdingcontainer,
+  .holdingcontainer2 {
+    max-width: 100%;
+  }
+
+  /*-- info --*/
+  .infographic-billeder {
+    flex-direction: column;
+    width: 300%;
+  }
+
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "box1-2 box1-2"
+      "box2-2 box2-2"
+      "box3-2 box3-2"
+      "box4-2 box4-2";
+  }
+
+  .video-container {
+    flex-direction: column;
+    width: 250%;
+  }
+
+  /*-- Footer --*/
+  .page_footer {
+    height: 50vh;
+  }
+
+  #map {
+    width: 50%;
+    height: 15%;
+    justify-content: center;
+    margin-left: 30%;
+  }
+
+  .some-h4 {
+    margin-left: 30%;
+  }
+
+  .some-image {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form {
+    width: 95%;
+  }
+
+  .form .user-input {
+    width: 100%;
+  }
+
+  .form .btn {
+    width: 100%;
+  }
+}

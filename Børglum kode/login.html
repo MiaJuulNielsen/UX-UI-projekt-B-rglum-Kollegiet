@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Børglum kollegiet ligger centralt i forhold til Aarhus og uddannelsesinstitutionerne. På Kollegiet er der mange fælles faciliteter."
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" href="img/logo.png" />
+    <title>Børglum Kollegiet</title>
+  </head>
+
+  <body>
+    <!--navbar-->
+    <nav>
+      <a href="index.html" id="logo">
+        <img class="logo-img" src="img/logo.png" alt="Børglum Kollegiet logo" />
+      </a>
+
+      <ul class="nav_links">
+        <li>
+          <a href="info.html">Information</a>
+        </li>
+        <li>
+          <a href="værelser.html">Værelser</a>
+        </li>
+        <li>
+          <a href="login.html">Log-in</a>
+        </li>
+      </ul>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+    <script src="script.js"></script>
+
+    <h1 class="h1-login">Log-in</h1>
+    <main class="main-login">
+      <!--form area start-->
+      <div class="form">
+        <!--login form start-->
+        <form class="login-form" action="" method="post">
+          <i class="fas fa-user-circle"></i>
+          <input
+            class="user-input"
+            type="text"
+            name=""
+            placeholder="Username"
+            required
+          />
+          <input
+            class="user-input"
+            type="password"
+            name=""
+            placeholder="Password"
+            required
+          />
+          <div class="options-01">
+            <label class="remember-me"
+              ><input type="checkbox" name="" />Remember me</label
+            >
+            <a href="#">Forgot your password?</a>
+          </div>
+          <input class="btn" type="submit" name="" value="LOGIN" />
+          <div class="options-02">
+            <p>Not Registered? <a href="#">Create an Account</a></p>
+          </div>
+        </form>
+        <!--login form end-->
+        <!--signup form start-->
+        <form class="signup-form" action="" method="post">
+          <i class="fas fa-user-plus"></i>
+          <input
+            class="user-input"
+            type="text"
+            name=""
+            placeholder="Username"
+            required
+          />
+          <input
+            class="user-input"
+            type="email"
+            name=""
+            placeholder="Email Address"
+            required
+          />
+          <input
+            class="user-input"
+            type="password"
+            name=""
+            placeholder="Password"
+            required
+          />
+          <input class="btn" type="submit" name="" value="SIGN UP" />
+          <div class="options-02">
+            <p>Already Registered? <a href="#">Sign In</a></p>
+          </div>
+        </form>
+        <!--signup form end-->
+      </div>
+      <!--form area end-->
+
+      <script type="text/javascript">
+        $(".options-02 a").click(function () {
+          $("form").animate(
+            {
+              height: "toggle",
+              opacity: "toggle",
+            },
+            "slow"
+          );
+        });
+      </script>
+    </main>
+
+    <footer class="page_footer">
+      <section class="page_footer_section">
+        <h4>Find os her</h4>
+        <link
+          href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css"
+          rel="stylesheet"
+        />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+
+        <div id="map"></div>
+        <script>
+          mapboxgl.accessToken =
+            "pk.eyJ1IjoibWlhanV1bG5pZWxzZW4iLCJhIjoiY2tuZzA2YXd2MDJpejJvb2Jocjl4b3NyaCJ9.uOJRIpTNzax7ARMUo9mrcw";
+          var map = new mapboxgl.Map({
+            container: "map", // container id
+            style: "mapbox://styles/miajuulnielsen/cknhetd7t3gxd17o4j1yjz6et", // style URL
+            center: [10.213432, 56.18803], // starting position [lng, lat]
+            zoom: 15.79, // starting zoom
+          });
+        </script>
+      </section>
+
+      <section class="page_footer_section">
+        <h4 class="some-h4">Kontakt</h4>
+        <p>
+          Telefon: +45 86 21 55 52 <br />
+          E-mail: kontoret@boerglumkollegiet.dk
+        </p>
+        <a href="https://www.facebook.com/BoerglumTenantCommittee"
+          ><img src="img/fb.png" alt="facebook icon" class="some-image"
+        /></a>
+      </section>
+    </footer>
+  </body>
+</html>

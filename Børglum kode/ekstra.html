@@ -1,0 +1,42 @@
+<div class="grid-container">
+  <div class="box1">
+    <h1>Om Børglum Kollegiet</h1>
+    <p>
+      Børglum kollegiet ligger meget centralt i forhold til Aarhus og
+      uddannelsesinstitutionerne. På Kollegiet er der mange fælles faciliteter,
+      se hvilke under menuen faciliteter. Der er gode indkøbsmuligheder og nemt
+      til offentlig transport. Alle medarbejdere på kollegiet har som
+      kerneopgave at sikre trygge og faste rammer for kollegiets beboere, så de
+      alene skal koncentrere sig om studierne. Vi er altid klar til at lægge øre
+      til et hvilket som helst problem der måtte være grund til usikkerhed for
+      en beboer. Intet er for stort og intet er for småt. Vi er til for
+      beboernes skyld.
+    </p>
+  </div>
+  <div class="box2">
+    <h2>Nyheder</h2>
+    <p></p>
+  </div>
+  <div class="box3">
+    <h2>Kalender</h2>
+    <img class="kalender" src="img/Kalendermaj2021.png" alt="" />
+  </div>
+  <div class="box4">
+    <h2>Facebook</h2>
+    <!-- SnapWidget -->
+    <script src="https://snapwidget.com/js/snapwidget.js"></script>
+    <iframe
+      src="https://snapwidget.com/embed/929233"
+      class="snapwidget-widget"
+      allowtransparency="true"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </div>
+</div>
+
+.grid-container { display: grid; grid-template-columns: auto auto auto;
+grid-template-rows: auto auto; gap: 0px 0px; grid-template-areas: "box1 box1
+box1" "box2 box3 box4"; } .box1 { grid-area: box1; } .box2 { grid-area: box2; }
+.box3 { grid-area: box3; } .box4 { grid-area: box4; } .kalender { height: 72%;
+width: 92%; } .snapwidget-widget { border: none; overflow: hidden; width: 80%; }
